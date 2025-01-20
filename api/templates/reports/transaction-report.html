@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holding Report</title>
+
+    <style>
+    @page main_template{
+        size:16.54in 23.39in;
+        margin: 2cm;
+        @frame content_frame {
+            left: 5pt;
+            width: 16in;
+            top: 10pt;
+            height: 23in;
+            -pdf-frame-border: 1;   /* for debugging the layout */
+        }
+
+        @frame header_frame {           /* Static Frame */
+            -pdf-frame-content: header_content;
+            left: 30pt; width: 742pt; top: 30pt; height: 40pt;
+        }
+
+        @frame footer_frame {           /* Another static Frame */
+            -pdf-frame-content: footer_content;
+            left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+        }
+    }
+
+        body{
+            line-height:0.5px;
+            font-family: "Trebuchet MS";
+        }
+        .yellow {
+            background-color:#fff7e6;
+        }
+
+        .blue {
+            background-color:#e6f2ff;
+        }
+
+        table {
+            border:1px solid black;
+            table-layout:auto;
+        }
+        th{
+            padding:2px;
+            font-size:15px;
+            font-weight:bold;
+        }
+        td{
+          text-align: center;
+          padding:2px;
+          font-size:15px;
+        }
+        .left {
+            text-align:left;
+        }
+        .right {
+            text-align:right;
+        }
+        h3 {
+            font-size:15px;
+            font-weight:bold;
+        }
+        #date{
+          font-size:15px;
+          font-family: "Trebuchet MS", Tahoma, sans-serif;
+          text-align:left;
+          font-weight:bold;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+<div>
+    <h3 style="text-align:center;">{{heading}}</h3>
+    <h3 style="text-align:center;">{{description}}</h3>
+</div>
+
+<p id='date'>{{pre_table}}</p>
+<table id="customers" align="center">
+    <tr>
+        <th scope="col" width="20" class="blue">S #</th>
+        <th scope="col" colspan="8" class="yellow"><---------- Sales -----------></th>
+        <th scope="col" colspan="7" class="blue"><------- Purchases --------></th>
+    </tr>
+
+    <tr>
+        <th class="blue right"> </th>
+        <th class="yellow left" width="110">Script</th>
+        <th class="yellow right" width="70">Date</th>
+        <th class="yellow right" width="60">Qty</th>
+        <th class="yellow right" width="60">Rate</th>
+        <th class="yellow right" width="90">Value</th>
+        <th class="yellow right" width="60">STT</th>
+        <th class="yellow right" width="60">Other</th>
+        <th class="yellow right" width="90">Net</th>
+        <th class="blue right" width="60">Qty</th>
+        <th class="blue right" width="60">Rate</th>
+        <th class="blue right" width="90">Value</th>
+        <th class="blue right" width="60">STT</th>
+        <th class="blue right" width="60">Other</th>
+        <th class="blue right" width="90">Net</th>
+        <th class="blue right">Profit</th>
+    </tr>
+
+
+    {% for row in table %}
+    <tr>
+        <td class="blue right">{{row.sno}}</td>
+        <td class="yellow left">{{row.part}}</td>
+        <td class="yellow right">{{row.s_date}}</td>
+        <td class="yellow right">{{row.s_qty}}</td>
+        <td class="yellow right">{{row.s_rate}}</td>
+        <td class="yellow right">{{row.s_value}}</td>
+        <td class="yellow right">{{row.s_stt}}</td>
+        <td class="yellow right">{{row.s_other}}</td>
+        <td class="yellow right">{{row.s_net}}</td>
+        <td class="blue right">{{row.pur_qty}}</td>
+        <td class="blue right">{{row.pur_rate}}</td>
+        <td class="blue right">{{row.pur_value}}</td>
+        <td class="blue right">{{row.pur_stt}}</td>
+        <td class="blue right">{{row.pur_other}}</td>
+        <td class="blue right">{{row.pur_net}}</td>
+        <td class="blue right">{{row.profit}}</td>
+    </tr>
+    {% endfor %}
+
+    <tr style='background-color:#808080'>
+        <td class="blue right">{{total.sno}}</td>
+        <td class="yellow left">{{total.part}}</td>
+        <td class="yellow right">{{total.s_date}}</td>
+        <td class="yellow right">{{total.s_qty}}</td>
+        <td class="yellow right">{{total.s_rate}}</td>
+        <td class="yellow right">{{total.s_value}}</td>
+        <td class="yellow right">{{total.s_stt}}</td>
+        <td class="yellow right">{{total.s_other}}</td>
+        <td class="yellow right">{{total.s_net}}</td>
+        <td class="blue right">{{total.pur_qty}}</td>
+        <td class="blue right">{{total.pur_rate}}</td>
+        <td class="blue right">{{total.pur_value}}</td>
+        <td class="blue right">{{total.pur_stt}}</td>
+        <td class="blue right">{{total.pur_other}}</td>
+        <td class="blue right">{{total.pur_net}}</td>
+        <td class="blue right">{{total.profit}}</td>
+    </tr>
+
+
+</table>
+
+
+</body>
+</html>
