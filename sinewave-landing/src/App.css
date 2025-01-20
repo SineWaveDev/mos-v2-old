@@ -1,0 +1,409 @@
+.logo {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  left: 10px; /* Adjust as needed */
+  width: 170px; /* Reduce size */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+
+
+/* Callback Button Styles */
+.callback-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Increased padding for a larger button */
+  font-size: 18px; /* Larger font size */
+  font-weight: bold;
+  border-radius: 8px; /* Slightly larger border radius */
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.callback-button:hover {
+  background-color: #0056b3; /* Darker color on hover */
+  color: white;
+}
+
+
+/* Main Content Styles */
+.main-content {
+  padding: 20px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center content horizontally */
+  gap: 20px; /* Space between product cards */
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.product {
+  flex: 1 1 calc(33.33% - 20px); /* Take up 1/3 of the row with spacing */
+  margin: 10px;
+  padding: 10px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px; /* Set a maximum width for each product */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.product:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-title {
+  font-size: 1.5em;
+  color: #005fa3;
+  margin-bottom: 10px;
+}
+
+.product-description {
+  font-size: 0.9em;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.benefits-list {
+  text-align: left;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefits-list li {
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
+.pricing-list {
+  list-style: none;
+  padding: 0;
+}
+
+.old-price {
+  color: red;
+  font-size: 1em;
+  text-decoration: line-through;
+}
+
+.new-price {
+  color: green;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Body Styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #d9f0ff;
+  color: #333;
+  background: linear-gradient(180deg, #e6f7ff 50%, #b3e0ff 100%);
+  overflow-x: hidden;
+}
+
+.app-container {
+  text-align: center;
+}
+
+.header {
+  background-color: white;
+  color: #005fa3;
+  padding: 12px 5px;
+  position: relative;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.header .title {
+  font-size: 2em;
+  margin: 7.5px 0;
+}
+
+.header .subtitle {
+  font-size: 1em;
+  line-height: 1.2;
+}
+
+
+
+.wave-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 119, 204, 0.4), rgba(0, 68, 136, 0.6));
+  border-radius: 50%;
+  animation: waveAnimation 8s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.wave1 {
+  top: 25%;
+  left: 0;
+  animation-delay: 0s;
+}
+
+.wave2 {
+  top: 45%;
+  left: -60%;
+  animation-delay: 2s;
+}
+
+.wave3 {
+  top: 60%;
+  left: 0;
+  animation-delay: 4s;
+}
+
+@keyframes waveAnimation {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(-25%) translateY(10px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.footer {
+  background-color: #005fa3;
+  color: white;
+  padding: 40px 20px;
+  text-align: left;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  margin: 10px;
+}
+
+.footer h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.footer ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.footer ul li {
+  margin-bottom: 8px;
+}
+
+.footer p,
+.footer a {
+  font-size: 1rem;
+}
+
+.footer a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center; /* Center align the buttons */
+  gap: 20px; /* Add spacing between buttons */
+  margin-top: 30px; /* Add space above the button group */
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px; /* Rounded corners for a professional look */
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
+}
+
+.buy-now {
+  background-color: #0077cc;
+  color: white;
+}
+
+.demo-button {
+  background-color: #28a745;
+  color: white;
+}
+
+
+
+.button:hover {
+  transform: translateY(-3px); /* Subtle lift on hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.button:active {
+  transform: translateY(0); /* Reset position on click */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1380px) {
+
+  .header .title {
+    margin-top: 20px; /* Adjust this value to increase the distance */
+  }
+  .logo {
+    width: 8%; /* Reduced width to decrease overall size */
+    top: 1.8%; /* Keeps the position */
+    left: 1.8%;
+    height: auto; /* Ensures aspect ratio is maintained */
+  }
+  
+  
+  .callback-button {
+    font-size: 14px;
+    padding: 6px 13px;
+    top: 2%;
+    right: 2%;
+  }
+}
+
+
+
+
+
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .product {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .header .title {
+    font-size: 1.8em;
+    margin-top: 20px; /* Adjust this value to increase the distance */
+  }
+
+  .header .subtitle {
+    font-size: 0.9em;
+  }
+  .logo {
+    width: 8%; /* Adjust logo size for medium screens */
+    top: 2%;
+    left: 2%;
+    height: auto; /* Ensures aspect ratio is maintained */
+  }
+  
+  .callback-button {
+    font-size: 12px;
+    padding: 8px 15px;
+    top: 2%;
+    right: 2%;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  .product {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .header .title {
+    font-size: 1.5em;
+  }
+
+  .header .subtitle {
+    font-size: 0.8em;
+  }
+
+  .logo {
+    width: 10%; /* Further adjust logo size for smaller screens */
+    top: 1.5%;
+    left: 1.5%;
+  }
+
+  .callback-button {
+    font-size: 11px;
+    padding: 6px 10px;
+    top: 1.5%;
+    right: 1.5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .callback-button {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+
+  .product-title {
+    font-size: 1.2em;
+  }
+
+  .buy-link {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .logo {
+    width: 15%; /* Minimize logo size for very small screens */
+    top: 1%;
+    left: 1%;
+  }
+
+  .callback-button {
+    font-size: 10px;
+    padding: 5px 8px;
+    top: 1%;
+    right: 1%;
+  }
+}
