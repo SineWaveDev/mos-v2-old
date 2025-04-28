@@ -5,6 +5,120 @@
   width: 170px; /* Reduce size */
   height: auto; /* Maintain aspect ratio */
 }
+.announcement {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 18px;
+  color: #005fa3;
+  font-weight: bold;
+}
+
+
+.product-box {
+  flex: 1 1 calc(25% - 10px); /* Reduced to 25% for a narrower width */
+  margin: 5px; /* Retained the reduced margin */
+  padding: 5px; /* Retained the reduced padding */
+  background: white;
+  border-radius: 8px; /* Retained border radius */
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1); /* Retained reduced shadow */
+  max-width: 350px; /* Reduced max-width further */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-header {
+  
+  text-align: center;
+  margin-bottom: 15px; /* Reduced margin */
+}
+
+.product-title {
+  font-size: 1em; /* Reduced font size */
+  font-weight: bold;
+  color: #005fa3; /* Changed text color to blue */
+}
+
+
+.highlight-offer {
+  font-size: 0.8em;
+  background-color: #ffdf00;
+  padding: 4px; /* Further reduced padding */
+  border-radius: 4px; /* Slightly smaller border radius */
+  margin-bottom: 8px; /* Reduced margin */
+  line-height: 1; /* Reduced line height for smaller height */
+}
+
+
+.price-box {
+  font-size: 0.8em; /* Reduced font size */
+  font-weight: bold;
+  color: #333;
+  margin-top: 8px; /* Reduced top margin */
+}
+
+.new-price {
+  color: green;
+}
+
+.old-price {
+  font-size: 0.9em; 
+  color: red;
+  text-decoration: line-through;
+}
+
+.product-description {
+  font-size: 0.70em; /* Reduced font size */
+  margin-bottom: 12px; /* Reduced margin */
+  color: #555;
+}
+
+.features-title {
+  font-size: 0.90em; /* Reduced font size */
+  font-weight: bold;
+  margin-top: 15px; /* Reduced margin */
+}
+
+.features-list {
+  list-style-type: none; /* Remove the list markers (dots) */
+  font-size: 0.76em;
+  text-align: left; /* Align text to the right */
+}
+
+.features-list li {
+  margin-bottom: 8px; /* Reduced space between list items */
+  font-size: 0.95em; /* Reduced font size */
+}
+
+
+.button-group {
+  text-align: center;
+  margin-top: 15px; /* Reduced top margin */
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 15px; /* Reduced padding */
+  border-radius: 4px; /* Slightly smaller border radius */
+  margin: 8px; /* Reduced margin between buttons */
+  font-size: 0.9em; /* Reduced font size */
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.demo-button {
+  background-color: #28a745;
+}
+
+.demo-button:hover {
+  background-color: #218838;
+}
+
+
+
+
 
 
 
@@ -17,10 +131,10 @@
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 10px 20px; /* Increased padding for a larger button */
-  font-size: 18px; /* Larger font size */
+  padding: 5px 12px; /* Adjusted padding for all screen sizes */
+  font-size: 12px; /* Reduced font size */
   font-weight: bold;
-  border-radius: 8px; /* Slightly larger border radius */
+  border-radius: 5px;
   cursor: pointer;
   text-align: center;
   transition: background-color 0.3s ease;
@@ -31,10 +145,9 @@
   color: white;
 }
 
-
 /* Main Content Styles */
 .main-content {
-  padding: 20px;
+  padding: 15px; /* Reduced padding */
   max-width: 100%;
   box-sizing: border-box;
 }
@@ -42,42 +155,37 @@
 .product-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center content horizontally */
-  gap: 20px; /* Space between product cards */
-  margin: 20px auto;
-  max-width: 1200px;
+  justify-content: center;
+  gap: 10px; /* Reduced gap */
+  margin: 15px auto;
+  max-width: 1000px; /* Adjusted max-width */
 }
 
 .product {
-  flex: 1 1 calc(33.33% - 20px); /* Take up 1/3 of the row with spacing */
-  margin: 10px;
-  padding: 10px;
+  flex: 1 1 calc(33.33% - 15px); /* Adjusted for a smaller width */
+  margin: 5px; /* Reduced margin */
+  padding: 5px; /* Reduced padding */
   background: white;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 600px; /* Set a maximum width for each product */
+  border-radius: 8px; /* Reduced border radius */
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1); /* Reduced shadow */
+  max-width: 500px; /* Reduced max-width */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 .product:hover {
   transform: scale(1.05);
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-.product-title {
-  font-size: 1.5em;
-  color: #005fa3;
-  margin-bottom: 10px;
+.title {
+  font-size: 0.50em; /* Reduced font size */ 
 }
 
-.product-description {
-  font-size: 0.9em;
-  margin-bottom: 15px;
-  color: #555;
-}
+
+
 
 .benefits-list {
+  font-size: 0.60em;
   text-align: left;
   list-style-type: none;
   padding: 0;
@@ -85,32 +193,21 @@
 }
 
 .benefits-list li {
-  margin: 5px 0;
-  line-height: 1.4;
+  margin: 4px 0;
+  line-height: 1.3; /* Slightly adjusted line height */
 }
 
 .pricing-list {
+  font-size: 0.90em;
   list-style: none;
   padding: 0;
 }
 
-.old-price {
-  color: red;
-  font-size: 1em;
-  text-decoration: line-through;
-}
-
 .new-price {
+  font-size: 0.90em;
   color: green;
-  font-size: 1.2em;
+  font-size: 1.1em; /* Reduced font size */
   font-weight: bold;
-}
-
-
-@keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0.5; }
-  100% { opacity: 1; }
 }
 
 /* Body Styling */
@@ -130,22 +227,20 @@ body {
 .header {
   background-color: white;
   color: #005fa3;
-  padding: 12px 5px;
+  padding: 10px 5px; /* Reduced padding */
   position: relative;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .header .title {
-  font-size: 2em;
-  margin: 7.5px 0;
+  font-size: 1.2em; /* Reduced font size */
+  margin: 5px 0;
 }
 
 .header .subtitle {
-  font-size: 1em;
+  font-size: 0.9em; /* Reduced font size */
   line-height: 1.2;
 }
-
-
 
 .wave-container {
   position: fixed;
@@ -200,7 +295,7 @@ body {
 .footer {
   background-color: #005fa3;
   color: white;
-  padding: 40px 20px;
+  padding: 35px 15px; /* Reduced padding */
   text-align: left;
 }
 
@@ -212,13 +307,13 @@ body {
 
 .footer-section {
   flex: 1;
-  min-width: 250px;
+  min-width: 220px; /* Reduced minimum width */
   margin: 10px;
 }
 
 .footer h3 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
+  font-size: 1.2rem; /* Reduced font size */
+  margin-bottom: 8px; /* Reduced margin */
 }
 
 .footer ul {
@@ -227,12 +322,12 @@ body {
 }
 
 .footer ul li {
-  margin-bottom: 8px;
+  margin-bottom: 6px; /* Reduced margin */
 }
 
 .footer p,
 .footer a {
-  font-size: 1rem;
+  font-size: 0.9rem; /* Reduced font size */
 }
 
 .footer a {
@@ -246,23 +341,23 @@ body {
 
 .button-group {
   display: flex;
-  justify-content: center; /* Center align the buttons */
-  gap: 20px; /* Add spacing between buttons */
-  margin-top: 30px; /* Add space above the button group */
+  justify-content: center;
+  gap: 15px; /* Reduced gap */
+  margin-top: 20px; /* Reduced margin */
 }
 
 .button {
   display: inline-block;
-  padding: 12px 25px;
-  font-size: 16px;
+  padding: 10px 20px; /* Reduced padding */
+  font-size: 14px; /* Reduced font size */
   font-weight: 600;
   border: none;
-  border-radius: 8px; /* Rounded corners for a professional look */
+  border-radius: 8px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .buy-now {
@@ -275,98 +370,62 @@ body {
   color: white;
 }
 
-
-
 .button:hover {
-  transform: translateY(-3px); /* Subtle lift on hover */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .button:active {
-  transform: translateY(0); /* Reset position on click */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-
-
 
 /* Media Queries for Responsiveness */
 @media (max-width: 1380px) {
+  .product {
+    flex: 1 1 calc(25% - 10px); /* Reduced width for larger screens */
+    margin: 8px; /* Reduced margin */
+    padding: 8px; /* Reduced padding */
+  }
 
-  .header .title {
-    margin-top: 20px; /* Adjust this value to increase the distance */
-  }
   .logo {
-    width: 8%; /* Reduced width to decrease overall size */
-    top: 1.8%; /* Keeps the position */
+    width: 8%;
+    top: 1.8%;
     left: 1.8%;
-    height: auto; /* Ensures aspect ratio is maintained */
   }
-  
   
   .callback-button {
     font-size: 14px;
     padding: 6px 13px;
-    top: 2%;
-    right: 2%;
   }
 }
 
-
-
-
-
-
-
-/* Media Queries for Responsiveness */
 @media (max-width: 1024px) {
   .product {
-    width: 90%;
-    padding: 15px;
+    flex: 1 1 calc(45% - 10px); /* Reduced width */
+    padding: 12px; /* Reduced padding */
   }
 
-  .header .title {
-    font-size: 1.8em;
-    margin-top: 20px; /* Adjust this value to increase the distance */
-  }
-
-  .header .subtitle {
-    font-size: 0.9em;
-  }
   .logo {
-    width: 8%; /* Adjust logo size for medium screens */
+    width: 8%;
     top: 2%;
     left: 2%;
-    height: auto; /* Ensures aspect ratio is maintained */
   }
   
   .callback-button {
     font-size: 12px;
     padding: 8px 15px;
-    top: 2%;
-    right: 2%;
   }
 }
 
-
-
-
 @media (max-width: 768px) {
   .product {
-    width: 95%;
-    padding: 10px;
-  }
-
-  .header .title {
-    font-size: 1.5em;
-  }
-
-  .header .subtitle {
-    font-size: 0.8em;
+    width: 90%;
+    padding: 10px; /* Reduced padding */
   }
 
   .logo {
-    width: 10%; /* Further adjust logo size for smaller screens */
+    width: 10%;
     top: 1.5%;
     left: 1.5%;
   }
@@ -374,28 +433,17 @@ body {
   .callback-button {
     font-size: 11px;
     padding: 6px 10px;
-    top: 1.5%;
-    right: 1.5%;
   }
 }
 
 @media (max-width: 480px) {
-  .callback-button {
-    padding: 8px 15px;
-    font-size: 12px;
-  }
-
-  .product-title {
-    font-size: 1.2em;
-  }
-
-  .buy-link {
-    padding: 8px 15px;
-    font-size: 14px;
+  .product {
+    width: 95%;
+    padding: 8px; /* Reduced padding */
   }
 
   .logo {
-    width: 15%; /* Minimize logo size for very small screens */
+    width: 15%;
     top: 1%;
     left: 1%;
   }
@@ -403,7 +451,5 @@ body {
   .callback-button {
     font-size: 10px;
     padding: 5px 8px;
-    top: 1%;
-    right: 1%;
   }
 }
