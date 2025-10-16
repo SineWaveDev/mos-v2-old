@@ -1,0 +1,384 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, #4a90e2 0%, #7b1fa2 100%);
+  min-height: 100vh;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Main container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+}
+
+/* Header */
+.app-header {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  animation: fadeInDown 1s ease-out;
+}
+
+.app-header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.company-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background: rgba(74, 144, 226, 0.7);
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+/* Main content */
+.app-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+/* Upload card */
+.upload-card {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  animation: slideInUp 1s ease-out;
+  transition: transform 0.3s ease;
+}
+
+.upload-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Upload form */
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* File sections */
+.file-section {
+  border: 2px dashed #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.file-section:hover {
+  border-color: #4a90e2;
+  background: #f5f8ff;
+}
+
+.file-section:first-child {
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.section-title::before {
+  font-size: 1.5rem;
+}
+
+/* File labels and inputs */
+.file-label {
+  display: block;
+  margin-bottom: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.file-label span {
+  display: inline-block;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-label::before {
+  content: attr(data-content);
+  display: inline-block;
+  background: linear-gradient(135deg, #4a90e2, #7b1fa2);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+  width: 100%;
+  text-align: center;
+}
+
+.file-label:hover::before {
+  background: linear-gradient(135deg, #357abd, #6b1a8a);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(74, 144, 226, 0.4);
+}
+
+.file-label[data-content="Select PDF Files"]::before {
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+}
+
+.file-label[data-content="Select Word Files"]::before {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+}
+
+.file-label[data-content="Select Word Files"]::before:hover {
+  background: linear-gradient(135deg, #e55a2b, #d87a15);
+}
+
+/* Selected files display */
+.selected-files {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f5f6fa;
+  border-radius: 8px;
+  border-left: 4px solid #4a90e2;
+  text-align: left;
+  min-height: 2rem;
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+.selected-files:has(p) {
+  border-left-color: #4a90e2;
+}
+
+.selected-files p {
+  font-size: 1rem;
+  color: #555;
+  word-break: break-all;
+  animation: fadeIn 0.5s ease-out;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Submit button */
+.submit-button {
+  background: linear-gradient(135deg, #4a90e2, #7b1fa2);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+.submit-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #357abd, #6b1a8a);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(74, 144, 226, 0.4);
+}
+
+.submit-button:disabled {
+  background: #b0bec5;
+  cursor: not-allowed;
+  transform: none;
+  animation: pulse 1.5s infinite;
+}
+
+/* Status messages */
+.status-message {
+  margin-top: 1.5rem;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+  animation: slideIn 0.5s ease-out;
+}
+
+.status-message.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+.status-message.error {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+/* Footer */
+.app-footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.app-footer p {
+  opacity: 0.9;
+  font-size: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .upload-card {
+    padding: 2rem;
+    margin: 0 1rem;
+  }
+
+  .file-section {
+    padding: 1.25rem;
+  }
+
+  .selected-files p {
+    font-size: 0.9rem;
+  }
+
+  .submit-button {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 1.5rem 1rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .upload-card {
+    padding: 1.5rem;
+  }
+
+  .file-label::before {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .file-section {
+    padding: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Scrollbar styling for selected files */
+.selected-files::-webkit-scrollbar {
+  width: 6px;
+}
+
+.selected-files::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.selected-files::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.selected-files::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
